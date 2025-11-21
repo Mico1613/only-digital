@@ -5,7 +5,6 @@ import gsap from 'gsap';
 import { Event } from '../../../mock/data';
 import * as styles from './EventsSlider.module.scss';
 
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/free-mode';
@@ -19,7 +18,6 @@ const EventsSlider: React.FC<EventsSliderProps> = ({ events }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [swiperInstance, setSwiperInstance] = useState<any>(null);
 
-  // Animate when events change
   useEffect(() => {
     if (containerRef.current) {
       gsap.fromTo(
@@ -39,7 +37,6 @@ const EventsSlider: React.FC<EventsSliderProps> = ({ events }) => {
   return (
     <div className={styles.container} ref={containerRef}>
       <button ref={setPrevEl} className={styles.navBtn}>
-        {/* Chevron Left */}
         <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7 1L2 6L7 11" stroke="#3877EE" strokeWidth="2"/>
         </svg>
@@ -83,7 +80,6 @@ const EventsSlider: React.FC<EventsSliderProps> = ({ events }) => {
       </Swiper>
 
       <button ref={setNextEl} className={styles.navBtn}>
-        {/* Chevron Right */}
         <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L6 6L1 11" stroke="#3877EE" strokeWidth="2"/>
         </svg>

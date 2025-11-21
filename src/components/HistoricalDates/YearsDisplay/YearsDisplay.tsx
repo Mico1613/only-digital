@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import * as styles from '../HistoricalDates.module.scss';
+import * as styles from './YearsDisplay.module.scss';
 
 interface YearsDisplayProps {
   startYear: number;
@@ -37,7 +37,7 @@ const YearsDisplay: React.FC<YearsDisplayProps> = ({ startYear, endYear }) => {
   }, [startYear, endYear]);
 
   return (
-    <div className={styles.yearsDisplay}>
+    <div className={styles.container}>
       <span className={styles.startYear}>{displayStart}</span>
       <span className={styles.endYear}>{displayEnd}</span>
     </div>

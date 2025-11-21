@@ -10,7 +10,6 @@
     margin: 0 auto;
     max-width: 1440px;
 
-    /* Vertical Grid Line */
     &::before {
         content: '';
         position: absolute;
@@ -22,7 +21,6 @@
         z-index: 0;
     }
 
-    /* Horizontal Grid Line */
     &::after {
         content: '';
         position: absolute;
@@ -41,7 +39,6 @@
     left: 0;
     z-index: 10;
 
-    /* Gradient vertical line */
     &::before {
         content: '';
         position: absolute;
@@ -70,45 +67,6 @@
     height: 100%;
     pointer-events: none;
     z-index: 1;
-}
-
-.circleContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 530px;
-    height: 530px;
-    border: 1px solid rgba(66, 86, 122, 0.2);
-    border-radius: 50%;
-    pointer-events: auto;
-    z-index: 2;
-}
-
-.yearsDisplay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    gap: 60px;
-    z-index: 1;
-    pointer-events: none;
-
-    span {
-        font-size: 200px;
-        font-weight: 700;
-        line-height: 160px;
-        letter-spacing: -0.02em;
-    }
-
-    .startYear {
-        color: #5D5FEF;
-    }
-
-    .endYear {
-        color: #EF5DA8;
-    }
 }
 
 .controls {
@@ -157,121 +115,12 @@
     }
 }
 
-.eventsSlider {
-    position: absolute;
-    bottom: 30px;
-    left: 0;
-    width: 100%;
-    padding: 0 80px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    :global(.swiper) {
-        flex: 1;
-        padding: 20px 0;
-        overflow: hidden;
-    }
-
-    :global(.swiper-slide) {
-        width: auto;
-        max-width: 400px;
-        height: auto;
-    }
-
-    .navBtn {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        background: #fff;
-        border-radius: 50%;
-        box-shadow: 0 0 15px rgba(56, 119, 238, 0.1);
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 20;
-        transition: opacity 0.3s;
-
-        &:disabled {
-            opacity: 0;
-            cursor: default;
-            pointer-events: none;
-        }
-    }
-}
-
-.eventCard {
-    padding-right: 40px;
-
-    h3 {
-        font-family: 'Bebas Neue', sans-serif;
-        font-size: 25px;
-        color: #3877EE;
-        margin-bottom: 15px;
-        font-weight: 400;
-    }
-
-    p {
-        font-size: 16px;
-        line-height: 145%;
-        color: #42567A;
-        display: -webkit-box;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-}
-
-.point {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: #42567A;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    transition: width 0.3s, height 0.3s, background 0.3s;
-
-    &:hover {
-        width: 10px;
-        height: 10px;
-        background: #3877EE;
-    }
-
-    &.active {
-        width: 56px;
-        height: 56px;
-        background: #f4f5f9;
-        border: 1px solid rgba(48, 62, 88, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 20px;
-        color: #42567A;
-        z-index: 2;
-        cursor: default;
-
-        .pointLabel {
-            position: absolute;
-            left: 70px;
-            font-weight: 700;
-            font-size: 20px;
-            color: #42567A;
-            white-space: nowrap;
-        }
-    }
-}
-
 @media (max-width: 768px) {
     .container {
         display: flex;
         flex-direction: column;
         padding: 20px;
-        padding-bottom: 80px;
-        /* Space for controls */
+        padding-bottom: 40px;
         height: auto;
         min-height: 100vh;
         overflow-y: auto;
@@ -287,7 +136,7 @@
         position: relative;
         top: auto;
         left: auto;
-        margin: 0 0 40px 0;
+        margin: 60px 0 40px 0;
         order: 1;
 
         &::before {
@@ -310,85 +159,28 @@
         pointer-events: auto;
     }
 
-    .yearsDisplay {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        margin-bottom: 40px;
-        /* Increased spacing */
-        padding-bottom: 20px;
-        border-bottom: 1px solid #C7CDD9;
-        width: 100%;
-        justify-content: center;
-        gap: 30px;
-
-        span {
-            font-size: 56px;
-            line-height: 1;
-        }
-    }
-
-    .circleContainer {
-        display: none;
-    }
-
-    .eventsSlider {
-        position: relative;
-        bottom: auto;
-        left: auto;
-        padding: 0;
-        order: 3;
-        display: block;
-        margin-bottom: 0;
-        width: 100%;
-
-        .navBtn {
-            display: none;
-        }
-
-        :global(.swiper) {
-            padding-bottom: 0;
-            overflow: visible;
-        }
-
-        :global(.swiper-pagination) {
-            position: absolute;
-            bottom: -50px;
-            /* Position below slider */
-            left: 0;
-            width: 100%;
-            text-align: center;
-            z-index: 20;
-        }
-
-        :global(.swiper-pagination-bullet) {
-            background: #42567A;
-            opacity: 0.4;
-            width: 6px;
-            height: 6px;
-            margin: 0 5px;
-        }
-
-        :global(.swiper-pagination-bullet-active) {
-            background: #42567A;
-            opacity: 1;
-        }
-    }
-
     .controls {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
+        position: relative;
+        margin-top: 0;
+        bottom: auto;
+        left: 0;
         top: auto;
         transform: none;
         order: 4;
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
         padding-left: 0;
         z-index: 30;
 
+        .counter {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
         .buttons {
+            gap: 8px;
+
             button {
                 width: 25px;
                 height: 25px;

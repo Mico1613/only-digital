@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode, Pagination } from 'swiper/modules';
 import gsap from 'gsap';
 import { Event } from '../../../mock/data';
-import * as styles from '../HistoricalDates.module.scss';
+import * as styles from './EventsSlider.module.scss';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -37,7 +37,7 @@ const EventsSlider: React.FC<EventsSliderProps> = ({ events }) => {
   const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
 
   return (
-    <div className={styles.eventsSlider} ref={containerRef}>
+    <div className={styles.container} ref={containerRef}>
       <button ref={setPrevEl} className={styles.navBtn}>
         {/* Chevron Left */}
         <svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">

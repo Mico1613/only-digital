@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import * as styles from '../HistoricalDates.module.scss';
+import * as styles from './CircleNav.module.scss';
 import { TimePeriod } from '../../../mock/data';
 
 interface CircleNavProps {
@@ -49,7 +49,7 @@ const CircleNav: React.FC<CircleNavProps> = ({ periods, activeId, onSelect }) =>
   }, [activeId, activeIndex, angleStep]);
 
   return (
-    <div className={styles.circleContainer} ref={circleRef}>
+    <div className={styles.container} ref={circleRef}>
       {periods.map((period, index) => {
         const angle = index * angleStep;
         // Convert polar to cartesian

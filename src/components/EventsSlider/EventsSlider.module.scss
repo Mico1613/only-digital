@@ -15,6 +15,10 @@
         overflow: hidden;
     }
 
+    :global(.swiper-pagination) {
+        display: none;
+    }
+
     .navBtn {
         width: 40px;
         height: 40px;
@@ -40,6 +44,7 @@
 
 .eventCard {
     padding-right: 10px;
+    user-select: none;
 
     h3 {
         font-family: 'Bebas Neue', sans-serif;
@@ -67,9 +72,8 @@
         bottom: auto;
         left: auto;
         padding: 0;
-        order: 3;
         display: block;
-        margin-bottom: 78px;
+        margin-bottom: 0;
         width: 100%;
 
         .navBtn {
@@ -82,13 +86,10 @@
         }
 
         :global(.swiper-pagination) {
-            position: absolute;
-            bottom: -105px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            z-index: 20;
-            pointer-events: none;
+            display: block;
+            position: relative;
+            bottom: auto;
+            margin-top: 40px;
         }
 
         :global(.swiper-pagination-bullet) {
